@@ -582,6 +582,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .tt-results li { display: flex; gap: 1rem; align-items: center; padding: .8rem 0; border-top: 1px solid var(--line); }
 .pos { font-family: var(--f-display); font-weight: 800; font-size: 1.5rem; color: var(--red-bright); min-width: 2.6rem; }
 .tt-detail { color: var(--silver); font-size: .9rem; }
+.tt-year { display: block; font-family: var(--f-head); font-weight: 700; color: #fff; font-size: 1rem; margin-bottom: .15rem; }
 
 /* ================= PROGRESS / TIMELINE ================= */
 .progress { background: linear-gradient(180deg, var(--navy), var(--ink)); }
