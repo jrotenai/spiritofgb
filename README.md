@@ -4,6 +4,11 @@ A redesign of [spiritofgb.co.uk](https://spiritofgb.co.uk/) — the British moto
 land speed record project led by Alex Macfadzean, piloted by Guy Martin, aiming to be
 the first motorcycle to reach **400mph**.
 
+**Live site:** <https://jrotenai.github.io/spiritofgb/> (GitHub Pages, deploys from `main`)
+
+> Note: the gallery folder is `assets/Gallery/` (capital G) and GitHub Pages is
+> case-sensitive — keep image paths matching the real case or they'll 404 once deployed.
+
 ## Run locally
 
 It's a static site — no build step. Use any static server:
