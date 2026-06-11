@@ -39,6 +39,8 @@
   --radius-sm: 12px;
   --ease: cubic-bezier(.22,.61,.36,1);
   --header-h: 74px;
+  --gap-x: clamp(2rem, 5vw, 4.5rem);   /* shared two-column gap */
+  --gap-card: 1.2rem;                  /* shared card-grid gap */
 }
 
 /* ---------- Reset ---------- */
@@ -195,23 +197,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   transition: transform .25s var(--ease);
 }
 .brand:hover .brand-mark { transform: scale(1.03); }
-.brand-text { display: flex; flex-direction: column; line-height: 1; }
-.brand-name {
-  font-family: var(--f-display);
-  font-weight: 800;
-  font-size: 1.35rem;
-  letter-spacing: .01em;
-  text-transform: none;
-}
-.brand-name em { font-style: italic; font-weight: 600; opacity: .85; }
-.brand-sub {
-  font-family: var(--f-head);
-  font-size: .62rem;
-  letter-spacing: .25em;
-  text-transform: uppercase;
-  color: var(--silver);
-  margin-top: 3px;
-}
 
 .primary-nav { display: flex; gap: clamp(1rem, 2vw, 2rem); }
 .primary-nav a {
@@ -400,7 +385,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
 /* ================= MISSION ================= */
 .mission { background: var(--ink-2); }
-.mission-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.mission-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: var(--gap-x); align-items: start; }
 .mission-copy .lead, .lead {
   font-family: var(--f-head);
   font-size: clamp(1.25rem, 1.1rem + .7vw, 1.6rem);
@@ -409,7 +394,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .mission-copy p { color: var(--silver); margin-bottom: 1.1rem; }
 .mission-copy strong { color: #fff; font-weight: 600; }
 
-.mission-pillars { display: grid; gap: 1rem; }
+.mission-pillars { display: grid; gap: var(--gap-card); }
 .mission-pillars li {
   border: 1px solid var(--line); border-radius: var(--radius);
   padding: 1.5rem 1.6rem;
@@ -462,7 +447,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .callout.c2 i { background: #fff; box-shadow: 0 0 0 4px rgba(255,255,255,.14); }
 .callout.c3 i { background: var(--flag-blue); box-shadow: 0 0 0 4px rgba(11,61,145,.25); }
 
-.spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-card); }
 .spec {
   padding: 1.7rem 1.6rem; border-radius: var(--radius);
   background: rgba(255,255,255,.03); border: 1px solid var(--line);
@@ -491,7 +476,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .bar-target  { background: linear-gradient(90deg, var(--red), var(--red-bright)); box-shadow: 0 0 40px -6px rgba(200,16,46,.6); }
 .bar-val { font-family: var(--f-display); font-weight: 800; font-size: 1.4rem; color: #fff; white-space: nowrap; }
 
-.record-location { display: grid; grid-template-columns: 1.3fr .7fr; gap: clamp(2rem,4vw,4rem); align-items: center; }
+.record-location { display: grid; grid-template-columns: 1.3fr .7fr; gap: var(--gap-x); align-items: center; }
 .loc-text h3 { font-family: var(--f-head); font-size: clamp(1.4rem,1.1rem+1vw,1.9rem); margin-bottom: 1rem; }
 .loc-text p { color: var(--silver); }
 .loc-card {
@@ -522,7 +507,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
 /* ================= PILOT ================= */
 .pilot { background: linear-gradient(180deg, var(--ink), var(--navy)); }
-.pilot-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem,5vw,5rem); align-items: center; }
+.pilot-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: var(--gap-x); align-items: center; }
 .portrait {
   aspect-ratio: 4/5; border-radius: 22px; position: relative; overflow: hidden;
   background:
@@ -535,7 +520,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   content: ""; position: absolute; inset: 0;
   background: radial-gradient(60% 50% at 50% 30%, rgba(200,16,46,.3), transparent 70%);
 }
-.portrait-initials { font-family: var(--f-display); font-weight: 900; font-size: clamp(5rem,16vw,9rem); color: rgba(255,255,255,.9); position: relative; }
 .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; position: relative; z-index: 1; }
 .portrait-pilot::before { display: none; }
 .portrait::after {
@@ -563,7 +547,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
 /* ================= FOUNDER ================= */
 .founder { background: var(--ink-2); }
-.founder-layout { display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(2rem,5vw,4rem); align-items: start; }
+.founder-layout { display: grid; grid-template-columns: 1.25fr .75fr; gap: var(--gap-x); align-items: start; }
 .founder-copy p { color: var(--silver); margin-bottom: 1.2rem; }
 .founder-copy strong { color: #fff; font-weight: 600; }
 
@@ -638,8 +622,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .partner-cta { display: flex; flex-wrap: wrap; gap: 1rem; }
 
 /* ================= TEAM ================= */
-.team { background: var(--ink-2); }
-.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.team { background: var(--ink); }
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap-card); }
 .member {
   padding: 1.6rem 1.4rem; border-radius: var(--radius);
   background: rgba(255,255,255,.03); border: 1px solid var(--line);
@@ -654,7 +638,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
 /* ================= CONTACT / FORM ================= */
 .contact { background: linear-gradient(180deg, var(--navy), var(--ink)); }
-.contact-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.contact-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: var(--gap-x); align-items: start; }
 .contact-intro .section-intro { margin-bottom: 1.4rem; }
 .contact-direct { color: var(--silver); font-size: .95rem; }
 .contact-direct a { color: var(--red-bright); font-weight: 600; border-bottom: 1px solid rgba(229,25,59,.4); }
@@ -729,7 +713,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
 /* ================= SOCIAL PROOF ================= */
 .proof { background: var(--ink); }
-.proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+.proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap-card); }
 .proof-card {
   padding: 1.8rem 1.6rem; border-radius: var(--radius);
   background: rgba(255,255,255,.03); border: 1px solid var(--line);
@@ -748,7 +732,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
 .proof-logos { margin-top: clamp(2.5rem, 5vw, 4rem); text-align: center; }
 .proof-logos-label { display: block; color: var(--silver); font-family: var(--f-head); letter-spacing: .04em; font-size: .92rem; margin-bottom: 1.5rem; }
-.logo-wall { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.logo-wall { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap-card); }
 .logo-tile {
   display: flex; align-items: center; justify-content: center;
   height: 78px; padding: 1rem 1.4rem;
@@ -761,7 +745,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .logo-tile:hover { opacity: 1; filter: grayscale(0); border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.06); }
 
 /* ================= GALLERY ================= */
-.gallery { background: var(--ink); }
+.gallery { background: var(--ink-2); }
 /* Pinterest-style masonry via CSS columns — preserves each photo's native ratio */
 .gallery-grid {
   column-count: 4;
@@ -804,28 +788,29 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 /* ================= FOOTER ================= */
 .site-footer { background: var(--ink); border-top: 1px solid var(--line); padding-top: clamp(3rem,5vw,4.5rem); }
 .footer-inner { display: grid; grid-template-columns: 1fr; gap: clamp(1.5rem, 5vw, 4rem); align-items: center; padding-bottom: 3rem; }
-.footer-social { display: flex; gap: .7rem; }
-.social-link {
-  display: inline-flex; align-items: center; gap: .6rem;
-  padding: .7rem 1.2rem .7rem .9rem;
-  border: 1px solid var(--line); border-radius: 999px;
-  color: var(--silver); font-family: var(--f-head); font-weight: 600; font-size: .9rem;
-  transition: color .2s, border-color .2s, background .2s, transform .2s;
-}
-.social-link svg { flex-shrink: 0; }
-.social-link:hover { color: #fff; background: #1877F2; border-color: #1877F2; transform: translateY(-2px); }
-.footer-brand { display: flex; gap: 1rem; align-items: center; }
-.footer-brand img { height: 96px; width: auto; }
-.footer-nav { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; align-content: start; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: .7rem 1.6rem; align-content: start; }
 .footer-nav a { color: var(--silver); font-family: var(--f-head); font-weight: 500; transition: color .2s; }
 .footer-nav a:hover { color: #fff; }
-.footer-cta p { color: var(--silver); margin-bottom: .9rem; font-family: var(--f-head); }
 .footer-base {
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem;
   padding-block: 1.6rem; border-top: 1px solid var(--line);
   color: var(--silver-2); font-size: .85rem;
 }
 .footer-tag { color: var(--silver); }
+
+/* ================= FOCUS STATES ================= */
+.brand:focus-visible,
+.primary-nav a:focus-visible,
+.nav-more-btn:focus-visible,
+.nav-dropdown a:focus-visible,
+.mobile-nav a:focus-visible,
+.footer-nav a:focus-visible,
+.contact-direct a:focus-visible,
+.nav-social:focus-visible {
+  outline: 2px solid rgba(255,255,255,.7);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
 
 /* ================= REVEAL ANIMATION ================= */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
@@ -864,6 +849,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   .spec-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr; }
   .lead-member { grid-column: span 1; }
+  .form-row { grid-template-columns: 1fr; }
   .btn-lg { width: 100%; }
   .hero-cta, .partner-cta { width: 100%; }
 }
